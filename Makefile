@@ -1,24 +1,27 @@
 first: run
 
+TIME=time
+# TIME=/usr/bin/time
+
 loop: loop.c
 	cc -O -o loop loop.c
 
-run: C node php perl python
+run: c node php perl python
 
-C: loop
-	time ./loop
+c: loop
+	$(TIME) ./loop
 
 node:
-	time node loop.js
+	$(TIME) node loop.js
 
 php:
-	time php loop.php
+	$(TIME) php loop.php
 
 perl:
-	time perl loop.pl
+	$(TIME) perl loop.pl
 
 python:
-	time python3 loop.py
+	$(TIME) python3 loop.py
 
 clean:
 	rm -f loop *.o

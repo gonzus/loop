@@ -11,8 +11,8 @@ sub main {
   printf("Perl: running up to %d (%d) iterations\n", $top, $expected);
 
   my $total = 0;
-  for (my $i = 0; $i < $top; $i++) {
-    for (my $j = 0; $j < $top; $j++) {
+  for ( 0 .. $top - 1 ) {
+    for ( 0 .. $top - 1 ) {
       $total += 1;
     }
   }
